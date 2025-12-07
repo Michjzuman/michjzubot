@@ -4,7 +4,7 @@ import json
 
 from michjzubot import Brain
 
-with open("numbers.json", "r") as file:
+with open("./numbers.json", "r") as file:
     numbers = json.load(file)
 
 def random_number():
@@ -25,7 +25,7 @@ def to_vector(number_str):
     return [int(ch) for ch in number_str]
 
 os.system("clear")
-print("\n" * 3)
+print("\n" * 2)
 
 num_str = random_number()
 draw_number(num_str)
@@ -40,4 +40,4 @@ brain = Brain(
     outputs=10,
 )
 
-brain.visualize()
+print(brain.weights)
